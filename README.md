@@ -24,7 +24,7 @@
 
 # 📖 [Catalog of my things] <a name="about-project"></a>
 
-**[Catalog of my things]** is a project at <a href='https://www.microverse.org/'>Microverse</a>. It's an app that  keeps records of books, games, and music album.
+**[Catalog of my things]** Blog App is a web application that allows users to create, read, update, and delete blog posts. Users can sign up for an account, create new blog posts, and edit or delete their existing posts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -45,11 +45,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add new book]**
-- **[Add new game]**
-- **[Add new music album]**
-- **[Save all records in JSON file ]**
-- **[Create database tables for all collections]**
+- **[Add new post]**
+- **[Add new comment]**
+- **[Add new like]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -68,9 +66,10 @@ sh
 
  ### Install:
  Run: bundle install
+ Run: npm install
 
  ### Start:
- Run: ruby rails s
+ Run: rails s
 
  ### Tests:
  Run: rspec
@@ -91,7 +90,8 @@ sh
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Intend to use this app with a framework]**
+- [ ] **[reply to a comment]**
+- [ ] **[Search for specific blog posts based on keywords or tags]**
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -99,7 +99,7 @@ sh
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/calebchris000/Catalog-Of-My-Things/issues).
+Feel free to check the [issues page](https://github.com/ernestmusong/Blog-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
