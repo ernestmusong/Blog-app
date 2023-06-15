@@ -1,1 +1,25 @@
-<h1>Here is a list of posts for a given user</h1>
+<main>
+    <div class="user">
+        <div>
+            <%= image_tag (@user.photo) %>
+        </div>
+        <div>
+            <h4><%= @user.name %></h4>
+            <p>Number of posts: <%= @user.posts.count %></p>
+        </div>
+    </div>
+    <div class="bio">
+        <h4>Bio</h4>
+        <p><%= @user.bio%></p>
+    </div>
+    <ul class="list">
+        <% @user.posts.each do |post|%>
+        <li class="text">
+            <h4>Post #<%= post.id %></h4>
+            <p><%= post.text %></p>
+            <p>Comments:<%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+        </li>
+        <% end %>
+    </ul>
+    <button>See all posts</button>
+</main>

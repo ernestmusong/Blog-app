@@ -1,1 +1,20 @@
-<h1>Here is a list of all users</h1>
+<% if @users.blank? %>
+<p>There are not any users currently in the system.</p>
+<% else %>
+<h1>All users</h1>
+<main>
+    <ul>
+       <% @users.each do |user| %>
+       <li>
+         <div id="photo">
+            <%= image_tag (user.photo) %>
+         </div>
+         <div>
+            <h4><%= user.name %></h4>
+            <p>Number of posts: <%= user.posts_counter %></p>
+         </div>
+       </li>
+       <% end %>
+    </ul>
+</main>
+<% end %>

@@ -1,1 +1,36 @@
-<h1>All posts with comments for a given user</h1>
+<main>
+    <div>
+        <div id="photo">
+        <%= image_tag (@user.photo) %>
+        </div>
+        <div>
+        <h4><%= @user.name %></h4>
+        <p>Number of posts: <%= @user.posts.count %></p>
+        </div>
+    </div>
+    <% if @posts.blank? %>
+    <p>There are not any post currently for this author.</p>
+    <% else %>
+        <ul>
+        <% @posts.each do |post| %>
+        <li class="post">
+            <div class="text">
+            <h4>Post #<%= post.id %></h4>
+                <p><%= post.title %></p>
+                <p>Comments:<%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+            </div>
+            <div class="comments">
+                <div class="comments_list">
+                <ul>
+                    <% post.comments.each do |comment| %>
+                    <li><%= @user.name%>: <%= comment.text%></li>
+                    <% end %>
+                </ul>
+                </div>
+            </div>
+        </li>
+        <% end %>
+        </ul>
+    <% end %>
+    <button>Next</button>
+</main>
