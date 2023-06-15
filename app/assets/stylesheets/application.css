@@ -1,160 +1,159 @@
- *,
- html,
- body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- }
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
- h1 {
-    text-align: center;
- }
+h1 {
+  text-align: center;
+}
 
- main {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.75rem;
- }
+main {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.75rem;
+}
 
- .link {
-    text-decoration: none;
-    color: #333;
-    width: 100%;
- }
+.link {
+  text-decoration: none;
+  color: #333;
+  width: 100%;
+}
 
- ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
- }
+ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
 
- .list {
-    gap: 0.5rem;
- }
+.list {
+  gap: 0.5rem;
+}
 
- .list a {
-    width: 100%;
-    text-decoration: none;
- }
+.list a {
+  width: 100%;
+  text-decoration: none;
+}
 
- .list .text {
-    border: 2px solid #000;
-    padding-left: 0.2rem;
-    border-radius: 4px;
- }
+.list .text {
+  border: 2px solid #000;
+  padding-left: 0.2rem;
+  border-radius: 4px;
+}
 
- .float {
-    text-align: right;
- }
+.float {
+  text-align: right;
+}
 
- .list_item {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 1rem;
- }
+.list_item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
 
- #list_item {
-    margin-bottom: 2rem;
- }
+#list_item {
+  margin-bottom: 2rem;
+}
 
- .photo {
-    width: 70px;
-    height: 70px;
-    border: 2px solid #000;
-    border-radius: 4px;
- }
+.photo {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
 
- .user_name {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 2px solid #000;
-    border-radius: 4px;
-    height: 70px;
-    width: 80%;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
- }
+.user_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #000;
+  border-radius: 4px;
+  height: 70px;
+  width: 80%;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
 
- .user_name p {
-    align-self: flex-end;
- }
+.user_name p {
+  align-self: flex-end;
+}
 
- .bio {
-    border: 2px solid #000;
-    width: 100%;
-    margin-top: 0.75rem;
-    margin-bottom: 1.25rem;
-    padding-left: 0.2rem;
- }
+.bio {
+  border: 2px solid #000;
+  width: 100%;
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-left: 0.2rem;
+}
 
- .btn_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0.5rem;
-    width: 100%;
- }
+.btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  width: 100%;
+}
 
- .btn_container #next {
-    padding: 0.25rem 0.75rem;
- }
+.btn_container #next {
+  padding: 0.25rem 0.75rem;
+}
 
- .see_more {
-    text-align: center;
-    background: transparent;
- }
+.see_more {
+  text-align: center;
+  background: transparent;
+}
 
- .post {
-    width: 100%;
- }
+.post {
+  width: 100%;
+}
 
- #list {
-    gap: 2rem;
- }
+#list {
+  gap: 2rem;
+}
 
- .comments {
-    width: 100%;
-    margin-top: 2px;
- }
+.comments {
+  width: 100%;
+  margin-top: 2px;
+}
 
- .comments ul,
- .detail_comments {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    border: 2px solid #000;
-    border-radius: 4px;
-    padding-left: 0.2rem;
- }
+.comments ul,
+.detail_comments {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding-left: 0.2rem;
+}
 
- .detail {
-    border: 2px solid #000;
-    border-radius: 4px;
-    margin-bottom: 2px;
- }
+.detail {
+  border: 2px solid #000;
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
 
- .detail .user {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
- }
+.detail .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
 
- .detail .detail_text {
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
- }
+.detail .detail_text {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
 
- @media (min-width: 768px){
-    main {
-        width: 70%;
-        margin: 0 auto;
-    }
- }
-
+@media (min-width: 768px) {
+  main {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
