@@ -1,16 +1,16 @@
 <main>
-    <div>
-        <div>
+    <div class="detail">
+        <div class="user">
             <h4>Post #<%= @post.id %> by <%= @user.name %></h4>
-            <p>Comments:<%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
-        </div>
-        <div>
+            <p>Comments:<%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
+        </div><br/>
+        <div class="detail_text">
             <%= @post.text %>
         </div>
     </div>
-    <ul>
-    <% @post.comments.each do |comment| %>
-    <li><%= @user.name%>: <%= comment.text%></li>
-    <% end %>
+    <ul class="detail_comments">
+        <% @post.comments.each do |comment| %>
+        <li><%= @user.name%>: <%= comment.text%></li>
+        <% end %>
   </ul>
 </main>

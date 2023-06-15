@@ -1,36 +1,40 @@
 <main>
-    <div>
-        <div id="photo">
-        <%= image_tag (@user.photo) %>
+    <div id="list_item" class="list_item">
+        <div class="photo">
+           <%= image_tag (@user.photo) %>
         </div>
-        <div>
-        <h4><%= @user.name %></h4>
-        <p>Number of posts: <%= @user.posts.count %></p>
+        <div class="user_name">
+           <h4><%= @user.name %></h4>
+           <p>Number of posts: <%= @user.posts.count %></p>
         </div>
     </div>
     <% if @posts.blank? %>
     <p>There are not any post currently for this author.</p>
     <% else %>
-        <ul>
+        <ul id="list" class="list">
         <% @posts.each do |post| %>
         <li class="post">
-            <div class="text">
-            <h4>Post #<%= post.id %></h4>
-                <p><%= post.title %></p>
-                <p>Comments:<%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
-            </div>
+            <a class="link" href="/users/<%= @user.id %>/posts/<%= post.id %>">
+                <div class="text">
+                    <h4>Post #<%= post.id %></h4> <br/>
+                    <p><%= truncate(post.text, length: 20) %></p>
+                    <p class="float">Comments:<%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+                </div>
+            </a>
             <div class="comments">
                 <div class="comments_list">
-                <ul>
-                    <% post.comments.each do |comment| %>
-                    <li><%= @user.name%>: <%= comment.text%></li>
-                    <% end %>
-                </ul>
+                    <ul>
+                        <% post.recent_comments.each do |comment| %>
+                        <li><%= @user.name %>: <%= comment.text %></li>
+                        <% end %>
+                    </ul>
                 </div>
             </div>
         </li>
         <% end %>
         </ul>
     <% end %>
-    <button>Next</button>
+    <div class="btn_container">
+      <button id="next" class="see_more">Next</button>
+    </div>
 </main>

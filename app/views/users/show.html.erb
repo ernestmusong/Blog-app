@@ -1,25 +1,29 @@
 <main>
-    <div class="user">
-        <div>
+    <div class="list_item">
+        <div class="photo">
             <%= image_tag (@user.photo) %>
         </div>
-        <div>
-            <h4><%= @user.name %></h4>
+        <div class="user_name">
+            <h3><%= @user.name %></h3>
             <p>Number of posts: <%= @user.posts.count %></p>
         </div>
     </div>
     <div class="bio">
-        <h4>Bio</h4>
+        <h4>Bio</h4> <br/>
         <p><%= @user.bio%></p>
     </div>
     <ul class="list">
         <% @user.posts.each do |post|%>
-        <li class="text">
-            <h4>Post #<%= post.id %></h4>
-            <p><%= post.text %></p>
-            <p>Comments:<%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
-        </li>
+        <a href="/users/<%=@user.id%>/posts">
+            <li class="text">
+                <h4>Post #<%= post.id %></h4><br/>
+                <p><%= post.text %></p>
+                <p class="float">Comments:<%= post.comments.count %>, Likes: <%= post.likes.count %></p>
+            </li>
+        </a>
         <% end %>
     </ul>
-    <button>See all posts</button>
+    <div class="btn_container">
+      <button class="see_more">See all posts</button>
+    </div>
 </main>
