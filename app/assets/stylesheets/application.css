@@ -1,3 +1,5 @@
+@import "font-awesome";
+
 *,
 html,
 body {
@@ -94,9 +96,10 @@ ul {
 .btn_container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 0.5rem;
-  width: 100%;
+  justify-content: space-between;
+  padding-top: 2rem;
+  width: 30%;
+  margin: 0 auto;
 }
 
 .btn_container #next {
