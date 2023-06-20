@@ -2,7 +2,6 @@
 require 'capybara/rspec'
 require 'webdrivers'
 
-
 require 'spec_helper'
 
 ENV['RAILS_ENV'] ||= 'test'
@@ -70,4 +69,3 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
-
