@@ -5,6 +5,7 @@
             <p>Comments:<%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
         </div><br/>
         <div class="detail_text">
+          <h3><%= @post.title %></h3>
             <%= @post.text %>
         </div>
 

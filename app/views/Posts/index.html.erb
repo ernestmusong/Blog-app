@@ -14,13 +14,14 @@
         <ul id="list" class="list">
         <% @posts.each do |post| %>
         <li class="post">
-            <a class="link" href="/users/<%= @user.id %>/posts/<%= post.id %>">
+            <%= link_to user_post_path(@user, post), class: "link" do %>
                 <div class="text">
                     <h4>Post #<%= post.id %></h4> <br/>
+                    <h3><%= post.title %></h3> <br/>
                     <p><%= truncate(post.text, length: 20) %></p>
                     <p class="float">Comments:<%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
                 </div>
-            </a>
+            <%end%>
             <div class="comments">
                 <div class="comments_list">
                     <ul>
@@ -33,9 +34,13 @@
         </li>
         <% end %>
         </ul>
-    <% end %>
+      <% if @user.posts.count > 5 %>
     <div class="btn_container">
       <button id="next" class="see_more">Next</button>
-       <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
+      <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
     </div>
+    <% else %>
+    <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
+    <% end %>
+  <% end %>-
 </main>

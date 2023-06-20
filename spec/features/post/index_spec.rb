@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'capybara/rails'
-require 'capybara/rspec'
 
 RSpec.describe 'posts#index', type: :feature do
   before :all do
@@ -52,7 +50,7 @@ RSpec.describe 'posts#index', type: :feature do
   scenario 'I can see the first comments on a post' do
     visit user_posts_path(@user1)
     expect(page).to have_content(@post1.recent_comments.first.text)
-end
+  end
 
   scenario 'I can see how many comments a post has.' do
     visit user_posts_path(@user1)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "user#show", type: :feature do
+RSpec.describe 'users#show', type: :feature do
   before :all do
     @user1 = User.create(name: 'Musong', photo: 'https://tse1=Api&P=0&h=180', bio: 'A web developer', posts_counter: 6)
     @post1 = @user1.posts.create(title: 'Truth is fiction', text: 'Lorem ipsum do', author: @user1)
@@ -26,12 +26,12 @@ RSpec.describe "user#show", type: :feature do
     expect(page).to have_content(@user1.name)
   end
 
-  scenario "I can see the number of posts the user has written" do
+  scenario 'I can see the number of posts the user has written' do
     visit user_path(@user1)
     expect(page).to have_content("Number of posts: #{@user1.posts_counter}")
   end
 
-  scenario "I can see the number of posts the user has written" do
+  scenario 'I can see the number of posts the user has written' do
     visit user_path(@user1)
     expect(page).to have_content(@user1.bio)
   end
@@ -48,7 +48,7 @@ RSpec.describe "user#show", type: :feature do
     visit user_path(@user1)
     click_link @post1.text
     expect(current_path).to eq(user_post_path(@user1, @post1))
-  end 
+  end
 
   scenario "I can see a button that lets me view all of a user's posts." do
     visit user_path(@user1)
