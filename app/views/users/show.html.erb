@@ -13,17 +13,17 @@
         <p><%= @user.bio%></p>
     </div>
     <ul class="list">
-        <% @user.posts.each do |post|%>
-        <a href="/users/<%=@user.id%>/posts">
-            <li class="text">
+        <% @posts.each do |post|%>
+        <li class="text">
+            <%= link_to user_post_path(@user, post) do %>
                 <h4>Post #<%= post.id %></h4><br/>
                 <p><%= post.text %></p>
                 <p class="float">Comments:<%= post.comments.count %>, Likes: <%= post.likes.count %></p>
-            </li>
-        </a>
+            <% end %>
+        </li>
         <% end %>
     </ul>
     <div class="btn_container">
-      <button class="see_more">See all posts</button>
+      <%= link_to 'See all posts', user_posts_path(@user) %>
     </div>
 </main>
