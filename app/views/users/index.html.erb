@@ -3,19 +3,19 @@
 <% else %>
   <h1>All users</h1>
   <main>
-    <ul>
+    <ul class="users_list">
       <% @users.each do |user| %>
-        <a class="link" href="/users/<%= user.id %>">
-          <li class="list_item">
-            <div class="photo">
-              <%= image_tag (user.photo) %>
-            </div>
-            <div class="user_name">
-              <h3><%= user.name %></h3>
-              <p>Number of posts: <%= user.posts_counter %></p>
-            </div>
-          </li>
-        </a>
+        <li class="list_item">
+            <a class="link" href="/users/<%= user.id %>">
+                    <div class="photo">
+                      <%= image_tag (user.photo) %>
+                    </div>
+                    <div class="user_name">
+                      <h3><%= user.name %></h3>
+                      <p>Number of posts: <%= user.posts_counter %></p>
+                    </div>
+             </a>
+            </li>
       <% end %>
     </ul>
   </main>
