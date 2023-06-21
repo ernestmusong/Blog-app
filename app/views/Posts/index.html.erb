@@ -1,7 +1,11 @@
 <main>
     <div id="list_item" class="list_item">
         <div class="photo">
-           <%= image_tag (@user.photo) %>
+            <% if @user.photo.present? %>
+                <%= image_tag user.photo %>
+              <% else %>
+                <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png' %>
+              <% end %>
         </div>
         <div class="user_name">
            <h4><%= @user.name %></h4>
