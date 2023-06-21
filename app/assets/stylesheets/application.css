@@ -154,6 +154,80 @@ ul {
   padding-right: 0.2rem;
 }
 
+/* --------------------------------Sign up form----------------------- */
+
+.form_wrapper {
+  height: 50vh;
+}
+.sign_up {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  height: 50vh;
+}
+
+/* Style the form fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.field label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.field input,
+.field textarea {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.field textarea {
+  height: 100px;
+}
+
+/* Style the file input */
+.field input[type="file"] {
+  height: auto;
+  padding: 0;
+  border: none;
+}
+
+/* Style the submit button */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.actions input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
 @media (min-width: 768px) {
   main {
     width: 70%;
