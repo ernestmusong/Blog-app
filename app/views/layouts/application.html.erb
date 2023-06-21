@@ -10,10 +10,23 @@
   </head>
 
   <body>
-    <div class="notice_container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
+    <header>
+      <nav class="nav">
+        <% if user_signed_in? %>
+          <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav_link' %>
+          <%= link_to "Logout", sign_out_user_path, method: :get, class: 'nav_link' %>
+          <span class="nav_link"> Logged in as <strong><%= current_user.email %></strong></span>.
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, :class => 'nav_link'  %>
+          <%= link_to "Login", new_user_session_path, :class => 'nav_link'  %>
+        <% end %>
+         
+      </nav>
+   </header>
+   <div class="notice_wrap">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
     <%= yield %>
   </body>
 </html>

@@ -4,4 +4,3 @@ class Users::SessionsController < Devise::SessionsController
     flash[:notice] = 'You have been signed out.'
   end
 end
-
