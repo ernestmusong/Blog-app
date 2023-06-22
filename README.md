@@ -86,6 +86,12 @@ sh
 - Twitter: [@MusongAkeh](https://twitter.com/MusongAkeh)
 - LinkedIn: [Musong Ernest](https://www.linkedin.com/in/musongernestakeh/)
 
+👤 **Oussama Elabdioui**
+
+- GitHub: [@codedit334](https://github.com/codedit334)
+- Twitter: [@oussedit](https://twitter.com/oussedit)
+- LinkedIn: [Oussama Elabdioui](https://www.linkedin.com/in/oussama-elabdioui-4677a41b6/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
