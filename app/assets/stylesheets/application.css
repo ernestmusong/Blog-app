@@ -50,10 +50,14 @@ main {
   padding-top: 0.75rem;
 }
 
-.link {
+.link,
+.profile_wrap {
   text-decoration: none;
   color: #333;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 ul {
@@ -84,10 +88,7 @@ ul {
 }
 
 .list_item {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  gap: 1rem;
 }
 
 #list_item {
@@ -99,6 +100,12 @@ ul {
   height: 70px;
   border: 2px solid #000;
   border-radius: 4px;
+  display: grid;
+  place-items: center;
+}
+
+.profile_img {
+  max-width: 100%;
 }
 
 .user_name {
@@ -189,11 +196,22 @@ ul {
 /* --------------------------------Sign up form----------------------- */
 
 .form_wrapper {
-  height: 50vh;
+  height: auto;
 }
 
-.sign_up {
+.sign_up,
+.login,
+.edit {
   text-align: center;
+}
+
+.cancelbtn_wrapper {
+  margin-top: 200px;
+}
+
+.back {
+  text-align: center;
+  margin: 0 auto;
 }
 
 form {
@@ -211,6 +229,12 @@ form {
   margin-bottom: 20px;
   width: 100%;
   max-width: 500px;
+}
+
+.have_account {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .field label {
@@ -245,6 +269,8 @@ form {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .actions input[type="submit"] {
@@ -255,10 +281,19 @@ form {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 100%;
 }
 
 .actions input[type="submit"]:hover {
   background-color: #3e8e41;
+}
+
+.shared_links {
+  text-align: center;
+}
+
+.shared_links_wrap {
+  text-align: center;
 }
 
 @media (min-width: 768px) {
