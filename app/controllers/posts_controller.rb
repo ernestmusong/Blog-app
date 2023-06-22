@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.includes(:author, :comments).find(params[:id])
-    @comment = @post.comments.new
   end
 
   def new
@@ -27,6 +26,15 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @post.comments.destroy_all
+    @post.destroy
+
+    redirect_to user_posts_path(user_id: @user.id)
   end
 
   private

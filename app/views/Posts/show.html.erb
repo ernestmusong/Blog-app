@@ -12,13 +12,22 @@
     </div>
     <ul class="detail_comments">
         <% @post.comments.each do |comment| %>
-        <li><%= @user.name%>: <%= comment.text%></li>
+        <li>
+          <%= @user.name%>: 
+          <%= comment.text%>
+          <% if can? :destroy, comment %>
+          <%= button_to 'Delete Comment', user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+          </li>
         <% end %>
   </ul>
    <div class="btn_container">
-    <a href="/users/<%=@user.id%>/posts/<%=@post.id%>/comments/new">Add Comment</a>
+      <a href="/users/<%=@user.id%>/posts/<%=@post.id%>/comments/new">Add Comment</a>
+      <% if can? :destroy,  @post %>
+        <%= button_to 'Delete Post', user_post_path(@user, @post), method: :delete %>
+      <% end %>
       <% if current_user.likes.exists?(post: @post) %>
-      <%= button_to user_post_like_path(user_id: @user.id, post_id: @post.id, id: current_user.likes.find_by(post: @post).id), method: :delete, class: "like-btn" do %>
+        <%= button_to user_post_like_path(user_id: @user.id, post_id: @post.id, id: current_user.likes.find_by(post: @post).id), method: :delete, class: "like-btn" do %>
         Like<%= @post.likes.count %>
       <% end %>
     <% else %>

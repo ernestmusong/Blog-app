@@ -14,6 +14,7 @@
       <nav class="nav">
         <%= link_to 'Home', users_path, class: 'nav_link'%>
         <% if user_signed_in? %>
+          <%= link_to 'New Post', new_user_post_path(user_id: current_user.id), method: :get, class: 'nav_link' %>
           <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav_link' %>
           <%= link_to "Logout", sign_out_user_path, method: :get, class: 'nav_link' %>
           <span class="nav_link"> Logged in as <strong><%= current_user.email %></strong></span>.
