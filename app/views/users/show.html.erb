@@ -27,7 +27,12 @@
         </li>
         <% end %>
     </ul>
-    <div class="btn_container">
-      <%= link_to 'See all posts', user_posts_path(@user) %>
-    </div>
+    <% if @user.posts.count > 0%>
+      <div class="btn_container">
+        <%= link_to 'See all posts', user_posts_path(@user) %>
+        <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
+      </div>
+    <% else %>
+      <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
+    <% end %>
 </main>

@@ -13,7 +13,7 @@
     <ul class="detail_comments">
         <% @post.comments.each do |comment| %>
         <li>
-          <%= @user.name%>: 
+          <%= comment.author.name%>: 
           <%= comment.text%>
           <% if can? :destroy, comment %>
           <%= button_to 'Delete Comment', user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>

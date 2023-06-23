@@ -1,13 +1,14 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource # This line will automatically authorize each action based on the Ability class
 
   def index
-    @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:author, :comments)
   end
 
   def show
-    @user = User.find(params[:user_id])
     @post = @user.posts.includes(:author, :comments).find(params[:id])
   end
 
@@ -29,15 +30,22 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:id])
     @post.comments.destroy_all
+    @post.likes.destroy_all
     @post.destroy
 
     redirect_to user_posts_path(user_id: @user.id)
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
+
+  def set_post
+    @post = @user.posts.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :text)

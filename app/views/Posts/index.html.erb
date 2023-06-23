@@ -14,6 +14,7 @@
     </div>
     <% if @posts.blank? %>
     <p>There are not any post currently for this author.</p>
+    <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
     <% else %>
         <ul id="list" class="list">
         <% @posts.each do |post| %>
@@ -38,7 +39,7 @@
         </li>
         <% end %>
         </ul>
-      <% if @user.posts.count > 5 %>
+      <% if @user.posts.count > 3 %>
     <div class="btn_container">
       <button id="next" class="see_more">Next</button>
       <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
