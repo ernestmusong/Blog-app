@@ -17,28 +17,28 @@
         <p><%= @user.bio%></p>
     </div>
     <ul class="cards-container">
-        <% @posts.each do |post|%>
-        <li class="project">
+        <% @user.recent_posts.each do |post|%>
+        <li class="post">
             <%= link_to user_post_path(@user, post) do %>
               <div class="image-wrapper">
                 <% if @user.photo.present? %>
-                  <%= image_tag user.photo, class: 'project-img', alt: 'post' %>
+                  <%= image_tag user.photo, class: 'post-img', alt: 'post' %>
                 <% else %>
-                  <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: 'project-img', alt: 'post' %>
+                  <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: 'post-img', alt: 'post' %>
                 <% end %>
               </div>
-              <div class="project-footer">
+              <div class="post-footer">
                 <div class="post-date-wrap">
                   <h4>Post #<%= post.id %></h4>
                   <h4>Jan 12 2023</h4>
                 </div>
-                <div class="project-title-wrapper">
+                <div class="post-title-wrap">
                   <h4><%= post.title %></h4>
                 </div>
-                <div class="project-text-wrapper">
-                  <p><%= truncate(post.text, length: 20) %></p>
+                <div class="post-text-wrap">
+                  <p><%= truncate(post.text, length: 30) %>Read more</p>
                 </div>
-                <div class="project-likes-wrapper">
+                <div class="post-likes-wrap">
                    <p class="float">Comments:<%= post.comments.count %></p>
                    <p class="float">Likes: <%= post.likes.count %></p>
                 </div>
