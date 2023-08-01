@@ -22,9 +22,10 @@
         <% end %>
   </ul>
    <div class="btn_container">
-      <a href="/users/<%=@user.id%>/posts/<%=@post.id%>/comments/new">Add Comment</a>
       <% if can? :destroy,  @post %>
         <%= button_to 'Delete Post', user_post_path(@user, @post), method: :delete %>
+        <%= button_to 'Add Comment', new_user_post_comment_path(@user, @post), method: :get %>
+
       <% end %>
       <% if current_user.likes.exists?(post: @post) %>
         <%= button_to user_post_like_path(user_id: @user.id, post_id: @post.id, id: current_user.likes.find_by(post: @post).id), method: :delete, class: "like-btn" do %>

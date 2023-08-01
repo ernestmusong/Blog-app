@@ -58,6 +58,7 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  background-color: #f2f2f2;
 }
 
 ul {
@@ -89,6 +90,7 @@ ul {
 
 .list_item {
   width: 100%;
+  background-color: #f2f2f2;
 }
 
 #list_item {
@@ -98,7 +100,7 @@ ul {
 .photo {
   width: 70px;
   height: 70px;
-  border: 2px solid #000;
+  border: 2px solid #ddd;
   border-radius: 4px;
   display: grid;
   place-items: center;
@@ -112,7 +114,6 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid #000;
   border-radius: 4px;
   height: 70px;
   width: 80%;
@@ -125,7 +126,7 @@ ul {
 }
 
 .bio {
-  border: 2px solid #000;
+  border: 2px solid #ddd;
   width: 100%;
   margin-top: 0.75rem;
   margin-bottom: 1.25rem;
@@ -192,6 +193,50 @@ ul {
   padding-left: 0.2rem;
   padding-right: 0.2rem;
 }
+
+/* ---------------------------------Cards----------------------------- */
+
+.cards-container {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(327px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+}
+
+.project {
+  border: 1px solid #d0d9d4;
+  border-radius: 8px;
+}
+
+.image-wrapper {
+  height: 268px;
+  width: 100%;
+  background: #d0d9d4;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: absolute;
+}
+
+.project-footer {
+  padding: 16px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.project-title-wrapper {
+  font-size: 1.5rem;
+}
+
 
 /* --------------------------------Sign up form----------------------- */
 

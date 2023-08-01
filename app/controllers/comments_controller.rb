@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
     @comment.author = current_user
 
     if @comment.save
+      flash[:success] = 'Comment created successfully'
       redirect_to user_post_path(user_id: current_user.id, id: @post.id)
     else
       render :new

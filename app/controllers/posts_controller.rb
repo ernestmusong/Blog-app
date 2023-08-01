@@ -5,7 +5,12 @@ class PostsController < ApplicationController
   load_and_authorize_resource # This line will automatically authorize each action based on the Ability class
 
   def index
+    @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:author, :comments)
+
+    respond_to do |format|
+      format.html { render :index }
+    end
   end
 
   def show
