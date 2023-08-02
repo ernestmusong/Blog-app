@@ -17,6 +17,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
 }
 
 nav {
@@ -137,13 +138,10 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 2rem;
   width: 30%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   margin: 0 auto;
-}
-
-.btn_container #next {
-  padding: 0.25rem 0.75rem;
 }
 
 .see_more {
@@ -256,17 +254,28 @@ ul {
 
 .post-title-wrap {
   text-transform: capitalize;
+  font-size: 1.5rem;
 }
 
-.post-title-wrap {
-  font-size: 1.5rem;
+.post-text-wrap {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.read-more {
+  color: red;
+  text-transform: capitalize;
 }
 
 .post-date-wrap {
   font-size: 0.75rem;
 }
 
-
+.btns,
+.btn_container a {
+  color: blue;
+  text-transform: uppercase;
+  font-weight: bold;
+}
 /* --------------------------------Sign up form----------------------- */
 
 .form_wrapper {

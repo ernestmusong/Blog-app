@@ -30,13 +30,14 @@
               <div class="post-footer">
                 <div class="post-date-wrap">
                   <h4>Post #<%= post.id %></h4>
-                  <h4>Jan 12 2023</h4>
+                  <h4><%= post.posted_date%></h4>
                 </div>
                 <div class="post-title-wrap">
                   <h4><%= post.title %></h4>
                 </div>
                 <div class="post-text-wrap">
-                  <p><%= truncate(post.text, length: 30) %>Read more</p>
+                  <p><%= truncate(post.text, length: 30) %></p>
+                  <p class="read-more">Read more</p>
                 </div>
                 <div class="post-likes-wrap">
                    <p class="float">Comments:<%= post.comments.count %></p>
@@ -51,10 +52,12 @@
     </ul>
     <% if @user.posts.count > 0%>
       <div class="btn_container">
-        <%= link_to 'See all posts', user_posts_path(@user) %>
-        <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
+        <%= link_to 'See all posts', user_posts_path(@user), class: 'btns' %>
+        <%= link_to 'New Post', new_user_post_path(@user), class: 'btns' %>
       </div>
     <% else %>
-      <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
+      <div class="btn_container">
+        <%= link_to 'New Post', new_user_post_path(@user), class: 'btns' %>
+      </div>
     <% end %>
 </main>
