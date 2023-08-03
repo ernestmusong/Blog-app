@@ -99,16 +99,19 @@ ul {
 }
 
 .photo {
-  width: 70px;
-  height: 70px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
   display: grid;
   place-items: center;
+  background: white;
 }
 
 .profile_img {
+  width: 100%;
   max-width: 100%;
+  border-radius: 25px;
 }
 
 .user_name {
@@ -116,7 +119,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   border-radius: 4px;
-  height: 70px;
+  height: 50px;
   width: 80%;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
@@ -134,14 +137,23 @@ ul {
   padding-left: 0.2rem;
 }
 
+.user p,
+.user h4 {
+  font-weight: bold;
+}
+
 .btn_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 30%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
   margin: 0 auto;
+  width: 100%;
+  height: auto !important;
+}
+
+.button_to {
+  height: auto;
+  margin-top: 0;
 }
 
 .see_more {
@@ -151,6 +163,16 @@ ul {
 
 .post {
   width: 100%;
+}
+.like-btn {
+   border: none;
+}
+
+.likes_count {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: red;
 }
 
 #list {
@@ -190,6 +212,7 @@ ul {
 .detail .detail_text {
   padding-left: 0.2rem;
   padding-right: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 
 /* ---------------------------------Cards----------------------------- */

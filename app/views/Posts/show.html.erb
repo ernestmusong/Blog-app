@@ -1,14 +1,51 @@
 <main>
     <div class="detail">
-        <div class="user">
-            <h4>Post #<%= @post.id %> by <%= @user.name %></h4>
-            <p>Comments:<%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
-        </div><br/>
-        <div class="detail_text">
-          <h3><%= @post.title %></h3>
-            <%= @post.text %>
-        </div>
 
+          <div class="profile_wrap">
+        <div class="photo">
+             <% if @user.photo.present? %>
+                <%= image_tag user.photo %>
+              <% else %>
+                <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: 'profile_img' %>
+              <% end %>
+        </div>
+        <div class="user_name">
+            <h3><%= @user.name %></h3>
+            <p>Post# <%= @post.id %></p>
+        </div>
+    </div>
+        <div class="detail_text">
+            <p><%= @post.text %></p>
+        </div>
+        <article class="post">
+              <div class="image-wrapper">
+                <% if @user.photo.present? %>
+                  <%= image_tag user.photo, class: 'post-img', alt: 'post' %>
+                <% else %>
+                  <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: 'post-img', alt: 'post' %>
+                <% end %>
+              </div>
+              <div class="post-footer">
+                <div class="post-title-wrap">
+                  <h4><%= @post.title %></h4>
+                </div>
+                <div class="likes_count">
+                   <p>Comments:<%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
+                </div>
+                <div class="btn_container">
+      <% if can? :destroy,  @post %>
+        <%= button_to 'Delete Post', user_post_path(@user, @post), method: :delete, class: "like-btn" %>
+      <% end %>
+      <%= button_to 'Comment', new_user_post_comment_path(@user, @post), method: :get, class: "like-btn" %>
+      <% if current_user.likes.exists?(post: @post) %>
+        <%= button_to 'Unlike ', user_post_like_path(user_id: @user.id, post_id: @post.id, id: current_user.likes.find_by(post: @post).id), method: :delete, class: "like-btn" %>
+       
+    <% else %>
+      <%= button_to 'Like', user_post_likes_path(user_id: current_user.id, post_id: @post.id), method: :post, class: "like-btn" %>
+    <% end %>
+  </div>
+              </div>
+        </article>
     </div>
     <ul class="detail_comments">
         <% @post.comments.each do |comment| %>
@@ -21,20 +58,4 @@
           </li>
         <% end %>
   </ul>
-   <div class="btn_container">
-      <% if can? :destroy,  @post %>
-        <%= button_to 'Delete Post', user_post_path(@user, @post), method: :delete %>
-        <%= button_to 'Add Comment', new_user_post_comment_path(@user, @post), method: :get %>
-
-      <% end %>
-      <% if current_user.likes.exists?(post: @post) %>
-        <%= button_to user_post_like_path(user_id: @user.id, post_id: @post.id, id: current_user.likes.find_by(post: @post).id), method: :delete, class: "like-btn" do %>
-        Like<%= @post.likes.count %>
-      <% end %>
-    <% else %>
-      <%= button_to user_post_likes_path(user_id: current_user.id, post_id: @post.id), method: :post, class: "like-btn" do %>
-        Like<%= @post.likes.count %>
-      <% end %>
-    <% end %>
-  </div>
 </main>
