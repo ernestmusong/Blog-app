@@ -6,7 +6,7 @@
              <% if @user.photo.present? %>
                 <%= image_tag user.photo %>
               <% else %>
-                <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: 'profile_img' %>
+                <%= image_tag 'https://tse4.mm.bing.net/th?id=OIP.VwOipFm0fDDr_KOzoyrgVwAAAA&pid=Api&P=0&h=180', class: 'profile_img' %>
               <% end %>
         </div>
         <div class="user_name">
@@ -17,7 +17,7 @@
         <div class="detail_text">
             <p><%= @post.text %></p>
         </div>
-        <article class="post">
+        <article class="post post_detail">
               <div class="image-wrapper">
                 <% if @user.photo.present? %>
                   <%= image_tag user.photo, class: 'post-img', alt: 'post' %>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="btn_container">
       <% if can? :destroy,  @post %>
-        <%= button_to 'Delete Post', user_post_path(@user, @post), method: :delete, class: "like-btn" %>
+        <%= button_to 'Delete', user_post_path(@user, @post), method: :delete, class: "like-btn delete" %>
       <% end %>
       <%= button_to 'Comment', new_user_post_comment_path(@user, @post), method: :get, class: "like-btn" %>
       <% if current_user.likes.exists?(post: @post) %>
@@ -49,11 +49,20 @@
     </div>
     <ul class="detail_comments">
         <% @post.comments.each do |comment| %>
-        <li>
-          <%= comment.author.name%>: 
-          <%= comment.text%>
-          <% if can? :destroy, comment %>
-          <%= button_to 'Delete Comment', user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <li class="comment">
+          <div class="photo comment_photo">
+             <% if @user.photo.present? %>
+                <%= image_tag user.photo %>
+              <% else %>
+                <%= image_tag 'https://tse4.mm.bing.net/th?id=OIP.VwOipFm0fDDr_KOzoyrgVwAAAA&pid=Api&P=0&h=180', class: 'profile_img' %>
+              <% end %>
+        </div>
+          <div class="comment_wrap">
+           <h3> <%= comment.author.name%></h3> 
+            <p><%= comment.text%></p>
+            <% if can? :destroy, comment %>
+            <%= button_to 'Delete', user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' %>
+          </div>
         <% end %>
           </li>
         <% end %>
