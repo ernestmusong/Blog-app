@@ -1,15 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *,
 html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: Arial, Verdana, Helvetica, sans-serif; */
+  color: #525c69;
 }
 
 header {
   width: 100%;
   background: #333;
-  height: 60px;
+  height: 70px;
   left: 0;
   right: 0;
   top: 0;
@@ -49,6 +54,7 @@ main {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 0.75rem;
+  background: #f0f0f0;
 }
 
 .link,
@@ -143,6 +149,13 @@ ul {
   padding-left: 0.2rem;
 }
 
+.btns,
+.btn_container a {
+  color: blue;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .btn_container {
   display: flex;
   align-items: center;
@@ -150,6 +163,7 @@ ul {
   margin: 0 auto;
   width: 100%;
   height: auto !important;
+  padding-top: 1rem;
 }
 
 .button_to {
@@ -281,7 +295,8 @@ ul {
   color: #333;
 }
 
-.image-wrapper {
+.image-wrapper,
+.detail_image_wrapper {
   height: 268px;
   width: 100%;
   background: #d0d9d4;
@@ -339,12 +354,74 @@ ul {
   font-size: 0.75rem;
 }
 
-.btns,
-.btn_container a {
-  color: blue;
-  text-transform: uppercase;
-  font-weight: bold;
+/* --------------------------------Devise----------------------- */
+.registrations {
+  z-index: -1;
+  bottom: 0;
 }
+
+/* -------------------------------------------File upload----------------- */
+
+.reg {
+  border-radius: 50px;
+  background: #fff;
+}
+
+#container {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+  background: #fff;
+}
+
+#register_photo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  position: relative;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.2px solid #f2f2f2;
+}
+
+.custom-file-input {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-file-input input[type="file"] {
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.custom-file-input label {
+  display: block;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-file-input label::after {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+/* .custom-file-input input[type="file"]:focus + label::after {
+  color: var(--textColor);
+} */
+
+#p_img {
+  border-radius: 50px;
+}
+
+/* -------------------------------------------End File upload----------------- */
+
 /* --------------------------------Sign up form----------------------- */
 
 .form_wrapper {
@@ -361,26 +438,26 @@ ul {
   margin-top: 200px;
 }
 
-.back {
-  text-align: center;
-  margin: 0 auto;
-}
-
-form {
+.register_form,
+.login_form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
-  height: 50vh;
+  margin-top: 10px;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 2px solid #f2f2f2;
+  background: #fff;
 }
 
 /* Style the form fields */
 .field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
   width: 100%;
-  max-width: 500px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background: #fff;
 }
 
 .have_account {
@@ -389,24 +466,14 @@ form {
   justify-content: space-between;
 }
 
-.field label {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
 .field input,
 .field textarea {
-  font-size: 16px;
+  font-size: 1rem;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
+  padding-left: 1rem;
+  border: 2px solid #f2f2f2;
   height: 40px;
   box-sizing: border-box;
-}
-
-.field textarea {
-  height: 100px;
 }
 
 /* Style the file input */
@@ -414,6 +481,18 @@ form {
   height: auto;
   padding: 0;
   border: none;
+  border-bottom: 0.2px solid #f2f2f2;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border: 0.2px solid #777;
+  outline: none;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #999;
 }
 
 /* Style the submit button */
@@ -426,9 +505,9 @@ form {
 }
 
 .actions input[type="submit"] {
-  background-color: #4caf50;
-  color: white;
-  font-size: 16px;
+  background-color: green;
+  color: #f0f0f0;
+  font-size: 1rem;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -437,7 +516,7 @@ form {
 }
 
 .actions input[type="submit"]:hover {
-  background-color: #3e8e41;
+  opacity: 0.8;
 }
 
 .shared_links {
@@ -447,10 +526,15 @@ form {
 .shared_links_wrap {
   text-align: center;
 }
-
 @media (min-width: 768px) {
   main {
-    width: 70%;
     margin: 0 auto;
+  }
+  .register_form,
+  .login_form {
+    width: 35%;
+  }
+  .detail_image_wrapper {
+    height: 50vh;
   }
 }

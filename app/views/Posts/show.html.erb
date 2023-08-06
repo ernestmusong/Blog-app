@@ -18,7 +18,7 @@
             <p><%= @post.text %></p>
         </div>
         <article class="post post_detail">
-              <div class="image-wrapper">
+              <div class="detail_image_wrapper">
                 <% if @user.photo.present? %>
                   <%= image_tag user.photo, class: 'post-img', alt: 'post' %>
                 <% else %>

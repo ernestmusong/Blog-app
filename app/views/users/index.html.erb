@@ -6,20 +6,22 @@
     <ul class="users_list">
       <% @users.each do |user| %>
         <li class="list_item">
-            <a class="link" href="/users/<%= user.id %>">
-              <div class="photo">
-                <% if user.photo.present? %>
-                  <%= image_tag user.photo, class: "profile_img" %>
-                <% else %>
-                  <%= image_tag 'https://tse4.mm.bing.net/th?id=OIP.VwOipFm0fDDr_KOzoyrgVwAAAA&pid=Api&P=0&h=180', class: "profile_img" %>
-                <% end %>
-              </div>
-              <div class="user_name">
-                <h3><%= user.name %></h3>
-                <p>Number of posts: <%= user.posts.count %></p>
-              </div>
-             </a>
-            </li>
+          <a class="link" href="/users/<%= user.id %>">
+            <div class="photo">
+              <% if user.photo.present? %>
+                <%= image_tag user.photo, class: "profile_img" %>
+              <% else %>
+                <%= image_tag "https://tse4.mm.bing.net/th?id=OIP.VwOipFm0fDDr_KOzoyrgVwAAAA&pid=Api&P=0&h=180",
+                class: "profile_img" %>
+              <% end %>
+            </div>
+            <div class="user_name">
+              <h3><%= user.name %></h3>
+              <p>Number of posts:
+                <%= user.posts.count %></p>
+            </div>
+          </a>
+        </li>
       <% end %>
     </ul>
   </main>
