@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
-  before_action :set_post, only: [:index, :show, :edit, :update, :destroy]
+  # before_action :set_post, only: [:index, :show, :edit, :update, :destroy]
   load_and_authorize_resource # This line will automatically authorize each action based on the Ability class
 
   def index
@@ -48,11 +48,11 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def set_post
-    @post = @user.posts.find(params[:id])
-  end
+  # def set_post
+  #   @post = current_user.posts.find(params[:id])
+  # end
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text, :image)
   end
 end

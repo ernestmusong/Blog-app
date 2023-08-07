@@ -54,7 +54,6 @@ main {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 0.75rem;
-  background: #f0f0f0;
 }
 
 .link,
@@ -355,9 +354,12 @@ ul {
 }
 
 /* --------------------------------Devise----------------------- */
-.registrations {
+.registrations,
+.sessions {
   z-index: -1;
   bottom: 0;
+  background: #f2f2f2;
+  height: 100vh;
 }
 
 /* -------------------------------------------File upload----------------- */
@@ -476,7 +478,6 @@ ul {
   box-sizing: border-box;
 }
 
-/* Style the file input */
 .field input[type="file"] {
   height: auto;
   padding: 0;
@@ -495,7 +496,6 @@ ul {
   color: #999;
 }
 
-/* Style the submit button */
 .actions {
   display: flex;
   justify-content: center;

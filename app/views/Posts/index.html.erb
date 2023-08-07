@@ -21,8 +21,8 @@
         <li class="post">
             <%= link_to user_post_path(@user, post) do %>
               <div class="image-wrapper">
-                <% if @user.photo.present? %>
-                  <%= image_tag user.photo, class: 'post-img', alt: 'post' %>
+                <% if post.image.attached? %>
+                  <%= image_tag url_for(post.image), class: 'post-img', alt: 'post' %>
                 <% else %>
                   <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: 'post-img', alt: 'post' %>
                 <% end %>
@@ -52,7 +52,7 @@
         </ul>
       <% if @user.posts.count > 9 %>
     <div class="btn_container">
-      <%= link_to 'Back', user_path %>
+      <%= link_to 'Back', user_path(@user) %>
       <%= link_to 'New Post', new_user_post_path(@user) %>
       <%= link_to 'Next'%>
     </div>
