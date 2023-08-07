@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: :author_id, dependent: :destroy
   has_many :comments, foreign_key: :author_id, dependent: :destroy
   has_many :posts, foreign_key: :author_id, dependent: :destroy
+  has_one_attached :photo
 
   attribute :posts_counter, default: 0
   attribute :role, :string

@@ -8,8 +8,8 @@
         <li class="list_item">
           <a class="link" href="/users/<%= user.id %>">
             <div class="photo">
-              <% if user.photo.present? %>
-                <%= image_tag user.photo, class: "profile_img" %>
+              <% if user.photo.attached? %>
+              <%= image_tag url_for(user.photo), class: "profile_img", alt: 'profile photo' %>
               <% else %>
                 <%= image_tag "https://tse4.mm.bing.net/th?id=OIP.VwOipFm0fDDr_KOzoyrgVwAAAA&pid=Api&P=0&h=180",
                 class: "profile_img" %>

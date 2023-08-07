@@ -374,6 +374,7 @@ ul {
   padding-right: 0.5rem;
   width: 100%;
   background: #fff;
+  border-bottom: 0.2px solid #f2f2f2;
 }
 
 #register_photo {
@@ -384,7 +385,6 @@ ul {
   background: #fff;
   position: relative;
   padding-bottom: 0.2rem;
-  border-bottom: 0.2px solid #f2f2f2;
 }
 
 .custom-file-input {
