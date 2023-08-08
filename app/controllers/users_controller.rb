@@ -7,4 +7,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.limit(3)
   end
+
+  def sign_out_user
+    sign_out current_user
+    redirect_to root_path
+  end
 end

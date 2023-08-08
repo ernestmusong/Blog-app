@@ -24,7 +24,7 @@
 
 # 📖 [Catalog of my things] <a name="about-project"></a>
 
-**[Catalog of my things]** Blog App is a web application that allows users to create, read, update, and delete blog posts. Users can sign up for an account, create new blog posts, and edit or delete their existing posts.
+**[Catalog of my things]** A web application that allows users to create, read, update, and delete blog posts, add and delete comments, like/unlike a post. Users can sign up, login, update and cancel their accounts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -45,9 +45,17 @@
 
 ### Key Features <a name="key-features"></a>
 
+- **[Sign up]**
+- **[ Login ]**
+- **[ Logout ]**
+- **[ Edit profile ]**
+- **[ Cancel account ]**
 - **[Add new post]**
-- **[Add new comment]**
-- **[Add new like]**
+- **[Delete post]**
+- **[Add comment]**
+- **[Delete comment]**
+- **[Like post]**
+- **[Unlike post]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,6 +93,12 @@ sh
 - GitHub: [@ernestmusong](https://github.com/ernestmusong)
 - Twitter: [@MusongAkeh](https://twitter.com/MusongAkeh)
 - LinkedIn: [Musong Ernest](https://www.linkedin.com/in/musongernestakeh/)
+
+👤 **Oussama Elabdioui**
+
+- GitHub: [@codedit334](https://github.com/codedit334)
+- Twitter: [@oussedit](https://twitter.com/oussedit)
+- LinkedIn: [Oussama Elabdioui](https://www.linkedin.com/in/oussama-elabdioui-4677a41b6/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

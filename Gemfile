@@ -45,7 +45,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem 'sassc-rails'
 
 gem 'font-awesome-sass', '~> 6.4.0'
 
@@ -87,3 +87,10 @@ end
 #   gem 'selenium-webdriver'
 #   gem 'webdrivers'
 # end
+
+gem 'cancancan'
+gem 'devise', '~> 4.9'
+gem 'erb-formatter'
+
+# Command to generate active storage tables
+# rails active_storage:install

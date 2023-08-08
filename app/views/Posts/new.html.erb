@@ -4,12 +4,15 @@
 
   <div>
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, placeholder: "Titel" %>
   </div>
 
   <div>
     <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.text_area :text, placeholder: "Description" %>
+  </div>
+  <div class="field">
+      <%= f.file_field :image, placeholder: "Upload image" %>
   </div>
 
   <%= f.submit "Add post" %>

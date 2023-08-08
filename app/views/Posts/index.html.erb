@@ -1,7 +1,11 @@
 <main>
-    <div id="list_item" class="list_item">
+    <div id="list_item" class="profile_wrap">
         <div class="photo">
-           <%= image_tag (@user.photo) %>
+            <% if @user.photo.present? %>
+                <%= image_tag @user.photo, class: 'profile_img' %>
+              <% else %>
+                <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: 'profile_img' %>
+              <% end %>
         </div>
         <div class="user_name">
            <h4><%= @user.name %></h4>
@@ -10,37 +14,53 @@
     </div>
     <% if @posts.blank? %>
     <p>There are not any post currently for this author.</p>
+    <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
     <% else %>
-        <ul id="list" class="list">
+        <ul id="list" class="cards-container">
         <% @posts.each do |post| %>
         <li class="post">
-            <%= link_to user_post_path(@user, post), class: "link" do %>
-                <div class="text">
-                    <h4>Post #<%= post.id %></h4> <br/>
-                    <h3><%= post.title %></h3> <br/>
-                    <p><%= truncate(post.text, length: 20) %></p>
-                    <p class="float">Comments:<%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+            <%= link_to user_post_path(@user, post) do %>
+              <div class="image-wrapper">
+                <% if post.image.attached? %>
+                  <%= image_tag url_for(post.image), class: 'post-img', alt: 'post' %>
+                <% else %>
+                  <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: 'post-img', alt: 'post' %>
+                <% end %>
+              </div>
+              <div class="post-footer">
+                <div class="post-date-wrap">
+                  <h4>Post #<%= post.id %></h4>
+                  <h4><%= post.posted_date%></h4>
                 </div>
-            <%end%>
-            <div class="comments">
-                <div class="comments_list">
-                    <ul>
-                        <% post.recent_comments.each do |comment| %>
-                        <li><%= @user.name %>: <%= comment.text %></li>
-                        <% end %>
-                    </ul>
+                <div class="post-title-wrap">
+                  <h4><%= post.title %></h4>
                 </div>
-            </div>
+                <div class="post-text-wrap">
+                  <p><%= truncate(post.text, length: 30) %></p>
+                  <p class="read-more">Read more</p>
+                </div>
+                <div class="post-likes-wrap">
+                   <p class="float">Comments:<%= post.comments.count %></p>
+                   <p class="float">Likes: <%= post.likes.count %></p>
+                </div>
+              </div>
+                 
+      
+            <% end %>
         </li>
         <% end %>
         </ul>
-      <% if @user.posts.count > 5 %>
+      <% if @user.posts.count > 9 %>
     <div class="btn_container">
-      <button id="next" class="see_more">Next</button>
-      <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
+      <%= link_to 'Back', user_path(@user) %>
+      <%= link_to 'New Post', new_user_post_path(@user) %>
+      <%= link_to 'Next'%>
     </div>
     <% else %>
-    <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
+   <div class="btn_container">
+      <%= link_to 'Back', user_path(@user) %>
+      <%= link_to 'New Post', new_user_post_path(@user) %>
+    </div>
     <% end %>
-  <% end %>-
+  <% end %>
 </main>

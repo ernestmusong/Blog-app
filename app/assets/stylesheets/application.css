@@ -1,4 +1,4 @@
-@import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *,
 html,
@@ -6,22 +6,67 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+  /* font-family: Arial, Verdana, Helvetica, sans-serif; */
+  color: #525c69;
+}
+
+header {
+  width: 100%;
+  background: #333;
+  height: 70px;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  width: auto;
+}
+
+.nav_link {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 h1 {
   text-align: center;
 }
 
+.notice_wrap {
+  margin: 0 auto;
+  padding: 5px;
+  width: auto;
+  margin-top: 60px;
+}
+
 main {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 0.75rem;
+  padding-bottom: 4rem;
 }
 
-.link {
+.link,
+.profile_wrap {
   text-decoration: none;
   color: #333;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #f2f2f2;
 }
 
 ul {
@@ -42,7 +87,6 @@ ul {
 }
 
 .list .text {
-  border: 2px solid #000;
   padding-left: 0.2rem;
   border-radius: 4px;
 }
@@ -52,10 +96,8 @@ ul {
 }
 
 .list_item {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  gap: 1rem;
+  background-color: #f2f2f2;
 }
 
 #list_item {
@@ -63,22 +105,33 @@ ul {
 }
 
 .photo {
-  width: 70px;
-  height: 70px;
-  border: 2px solid #000;
-  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+}
+
+.profile_img {
+  max-width: 100%;
+  border-radius: 25px;
 }
 
 .user_name {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid #000;
   border-radius: 4px;
-  height: 70px;
+  height: 50px;
   width: 80%;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
+}
+
+.user_name h3,
+.user_name p .comment_wrap h3 {
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 .user_name p {
@@ -86,24 +139,33 @@ ul {
 }
 
 .bio {
-  border: 2px solid #000;
+  border: 2px solid #ddd;
   width: 100%;
   margin-top: 0.75rem;
   margin-bottom: 1.25rem;
   padding-left: 0.2rem;
 }
 
+.btns,
+.btn_container a {
+  color: blue;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .btn_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 2rem;
-  width: 30%;
   margin: 0 auto;
+  width: 100%;
+  height: auto !important;
+  padding-top: 1rem;
 }
 
-.btn_container #next {
-  padding: 0.25rem 0.75rem;
+.button_to {
+  height: auto;
+  margin-top: 0;
 }
 
 .see_more {
@@ -113,11 +175,55 @@ ul {
 
 .post {
   width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.post a {
+  text-decoration: none;
+  color: #333;
+}
+
+.post_detail {
+  border: none;
+}
+
+.like-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.delete {
+  background: red;
+  color: #f0f0f0;
+  border: 1px solid red;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+.delete:hover,
+.delete:focus {
+  color: red;
+  cursor: pointer;
+  background: #f0f0f0;
+}
+
+.like-btn:hover {
+  cursor: pointer;
+}
+
+.likes_count {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: red;
 }
 
 #list {
   gap: 2rem;
 }
+
+/* ----------------------------------------------------Comments--------------------- */
 
 .comments {
   width: 100%;
@@ -129,15 +235,35 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
-  border: 2px solid #000;
+  width: 60%;
   border-radius: 4px;
   padding-left: 0.2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 1rem;
+  margin: 0 auto;
+}
+
+.comment {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.comment_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: calc(100% - 66px);
 }
 
 .detail {
-  border: 2px solid #000;
+  border: 1px solid #ddd;
   border-radius: 4px;
+  margin: 0 auto;
   margin-bottom: 2px;
 }
 
@@ -152,11 +278,268 @@ ul {
 .detail .detail_text {
   padding-left: 0.2rem;
   padding-right: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+/* ---------------------------------Cards----------------------------- */
+
+.cards-container {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(327px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+}
+
+.image-wrapper,
+.detail_image_wrapper {
+  height: 268px;
+  width: 100%;
+  background: #d0d9d4;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative;
+}
+
+.post-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: absolute;
+}
+
+.post-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 16px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.post-date-wrap,
+.post-title-wrap,
+.post-text-wrap,
+.post-likes-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-likes-wrap {
+  font-weight: bold;
+}
+
+.post-title-wrap {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+
+.post-text-wrap {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.read-more {
+  color: red;
+  text-transform: capitalize;
+}
+
+.post-date-wrap {
+  font-size: 0.75rem;
+}
+
+/* --------------------------------Devise----------------------- */
+.registrations,
+.sessions,
+.edit_profile {
+  z-index: -1;
+  bottom: 0;
+  background: #f2f2f2;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+/* -------------------------------------------File upload----------------- */
+
+.reg {
+  border-radius: 50px;
+  background: #fff;
+}
+
+#container {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+  background: #fff;
+  border-bottom: 0.2px solid #f2f2f2;
+}
+
+#register_photo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+.custom-file-input {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-file-input input[type="file"] {
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.custom-file-input label {
+  display: block;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-file-input label::after {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+#p_img {
+  border-radius: 50px;
+}
+
+/* -------------------------------------------End File upload----------------- */
+
+/* --------------------------------Sign up form----------------------- */
+
+.form_wrapper {
+  height: auto;
+}
+
+.sign_up,
+.login,
+.edit {
+  text-align: center;
+}
+
+.cancelbtn_wrapper {
+  margin-top: 200px;
+}
+
+.register_form,
+.login_form,
+.edit_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 1rem;
+  border: 2px solid #f2f2f2;
+  background: #fff;
+}
+
+/* Style the form fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background: #fff;
+}
+
+.have_account {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.field input,
+.field textarea {
+  font-size: 1rem;
+  padding: 10px;
+  padding-left: 1rem;
+  border: 2px solid #f2f2f2;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.field input[type="file"] {
+  height: auto;
+  padding: 0;
+  border: none;
+  border-bottom: 0.2px solid #f2f2f2;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border: 0.2px solid #777;
+  outline: none;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #999;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.actions input[type="submit"] {
+  background-color: green;
+  color: #f0f0f0;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.actions input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+.shared_links {
+  text-align: center;
+}
+
+.shared_links_wrap {
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   main {
-    width: 70%;
     margin: 0 auto;
+  }
+
+  .register_form,
+  .login_form,
+  .edit_form {
+    width: 35%;
+  }
+
+  .detail {
+    width: 60%;
+  }
+
+  .detail_image_wrapper {
+    height: 50vh;
   }
 }
