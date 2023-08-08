@@ -108,13 +108,10 @@ ul {
   height: 50px;
   border: none;
   border-radius: 25px;
-  display: grid;
-  place-items: center;
   background: white;
 }
 
 .profile_img {
-  width: 100%;
   max-width: 100%;
   border-radius: 25px;
 }
@@ -232,11 +229,12 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
+  width: 60%;
   border-radius: 4px;
   padding-left: 0.2rem;
   padding-top: 0.2rem;
   padding-bottom: 1rem;
+  margin: 0 auto;
 }
 
 .comment {
@@ -260,6 +258,7 @@ ul {
   border: 1px solid #ddd;
   border-radius: 4px;
   margin-bottom: 2px;
+  margin: 0 auto;
 }
 
 .detail .user {
@@ -534,6 +533,9 @@ ul {
   .login_form,
   .edit_form {
     width: 35%;
+  }
+  .detail {
+    width: 60%;
   }
   .detail_image_wrapper {
     height: 50vh;

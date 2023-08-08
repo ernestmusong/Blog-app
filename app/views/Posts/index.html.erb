@@ -2,7 +2,7 @@
     <div id="list_item" class="profile_wrap">
         <div class="photo">
             <% if @user.photo.present? %>
-                <%= image_tag user.photo, class: 'profile_img' %>
+                <%= image_tag @user.photo, class: 'profile_img' %>
               <% else %>
                 <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: 'profile_img' %>
               <% end %>

@@ -24,7 +24,7 @@
 
 # 📖 [Catalog of my things] <a name="about-project"></a>
 
-**[Catalog of my things]** Blog App is a web application that allows users to create, read, update, and delete blog posts. Users can sign up for an account, create new blog posts, and edit or delete their existing posts.
+**[Catalog of my things]** A web application that allows users to create, read, update, and delete blog posts, add and delete comments, like/unlike a post. Users can sign up, login, update and cancel their accounts.
 
 ## 🛠 Built With <a name="built-with"></a>
 

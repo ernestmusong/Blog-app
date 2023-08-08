@@ -4,7 +4,7 @@
           <div class="profile_wrap">
         <div class="photo">
              <% if @user.photo.present? %>
-                <%= image_tag @user.photo %>
+                <%= image_tag @user.photo, class: 'profile_img' %>
               <% else %>
                 <%= image_tag 'https://tse4.mm.bing.net/th?id=OIP.VwOipFm0fDDr_KOzoyrgVwAAAA&pid=Api&P=0&h=180', class: 'profile_img' %>
               <% end %>
@@ -52,7 +52,7 @@
         <li class="comment">
           <div class="photo comment_photo">
              <% if @user.photo.present? %>
-                <%= image_tag user.photo %>
+                <%= image_tag @user.photo, class: 'profile_img' %>
               <% else %>
                 <%= image_tag 'https://tse4.mm.bing.net/th?id=OIP.VwOipFm0fDDr_KOzoyrgVwAAAA&pid=Api&P=0&h=180', class: 'profile_img' %>
               <% end %>
