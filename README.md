@@ -45,9 +45,17 @@
 
 ### Key Features <a name="key-features"></a>
 
+- **[Sign up]**
+- **[ Login ]**
+- **[ Logout ]**
+- **[ Edit profile ]**
+- **[ Cancel account ]**
 - **[Add new post]**
-- **[Add new comment]**
-- **[Add new like]**
+- **[Delete post]**
+- **[Add comment]**
+- **[Delete comment]**
+- **[Like post]**
+- **[Unlike post]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
