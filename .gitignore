@@ -31,4 +31,6 @@
 /config/master.key
 
 node_modules/
+
+# Ignore secret-key
 .env
