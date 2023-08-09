@@ -88,6 +88,9 @@ end
 #   gem 'webdrivers'
 # end
 
+# Use for hiding credentials
+gem 'dotenv-rails'
+
 gem 'cancancan'
 gem 'devise', '~> 4.9'
 gem 'erb-formatter'
