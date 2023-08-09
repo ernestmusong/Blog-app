@@ -87,6 +87,4 @@ test:
 #
 production:
   <<: *default
-  database: blog
-  username: musong
-  password: gmail900
+  url: <%= ENV['DATABASE_URL'] %>
