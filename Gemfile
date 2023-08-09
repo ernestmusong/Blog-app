@@ -97,3 +97,5 @@ gem 'erb-formatter'
 
 # Command to generate active storage tables
 # rails active_storage:install
+# Command to create credential.yml.enc and master.key using Nano editor
+# EDITOR=Nano rails credentials:edit
