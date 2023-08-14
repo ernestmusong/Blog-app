@@ -20,7 +20,7 @@
     <p><%= @user.bio %></p>
   </div>
   <% if @user.posts.blank? %>
-    <p>You do not have any posts at the moment, please click the link below to create a new post.</p>
+      <p>There are not any posts at the moment!</p>
   <% else %>
     <ul class="cards-container">
       <% @user.recent_posts.each do |post| %>
@@ -62,11 +62,19 @@
   <% if @user.posts.count > 0 %>
     <div class="btn_container">
       <%= link_to "See all posts", user_posts_path(@user), class: "btns" %>
-      <%= link_to "New Post", new_user_post_path(@user), class: "btns" %>
+      <% if user_signed_in? %>
+        <% if can? :create, @post%>
+          <%= link_to "New Post", new_user_post_path(@user), class: "btns" %>
+        <% end %>
+      <% end %>
     </div>
   <% else %>
     <div class="btn_container">
-      <%= link_to "New Post", new_user_post_path(@user), class: "btns" %>
+      <% if user_signed_in? %>
+        <% if can? :create, @post %>
+          <%= link_to "New Post", new_user_post_path(@user), class: "btns" %>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 </main>
