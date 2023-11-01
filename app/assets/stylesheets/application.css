@@ -524,6 +524,39 @@ ul {
   text-align: center;
 }
 
+.reply-btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.replies {
+  width: 100%;
+}
+
+.reply {
+  background: #fff;
+  width: 100%;
+}
+
+.reply .comment_wrap {
+  background: #fff;
+}
+
+.reply .comment_wrap h3 {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #000;
+}
+.reply .comment_wrap p {
+  font-size: 0.75rem;
+}
+
+.reply .comment_photo {
+  width: 25px;
+  height: 25px;
+}
+
 @media (min-width: 768px) {
   main {
     margin: 0 auto;

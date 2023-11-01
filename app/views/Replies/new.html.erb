@@ -1,0 +1,7 @@
+<%= form_with model: @reply, url: user_post_comment_replies_path( current_user, @post, @comment), method: :post do |f| %>
+  <div>
+    <%= f.label :text %>
+    <%= f.text_area :text %> 
+  </div>
+  <%= f.submit 'Reply' %>
+<% end %>

@@ -58,12 +58,33 @@
               <% end %>
         </div>
           <div class="comment_wrap">
-           <h3> <%= comment.author.name%></h3> 
+            <h3> <%= comment.author.name %></h3> 
             <p><%= comment.text%></p>
-            <% if can? :destroy, comment %>
-            <%= button_to 'Delete', user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' %>
+            <div class="reply-btn-wrap">
+              <% if can? :destroy, comment %>
+                <%= button_to 'Delete', user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' %>
+              <%end%>
+              <%= button_to 'Reply', new_user_post_comment_reply_path(@user, @post, comment), method: :get, class: "like-btn" %>
+            </div>
+            <%# Replies %>
+            <ul class="replies">
+     <% comment.replies.each do |r| %>
+        <li class="comment reply">
+          <div class="photo comment_photo">
+             <% if @user.photo.present? %>
+                <%= image_tag @user.photo, class: 'profile_img' %>
+              <% else %>
+                <%= image_tag 'https://tse4.mm.bing.net/th?id=OIP.VwOipFm0fDDr_KOzoyrgVwAAAA&pid=Api&P=0&h=180', class: 'profile_img' %>
+              <% end %>
+        </div>
+          <div class="comment_wrap">
+           <h3> <%= r.author.name %></h3> 
+           <p><%= r.text%></p>
           </div>
+          </li>
         <% end %>
+  </ul>
+          </div>
           </li>
         <% end %>
   </ul>
